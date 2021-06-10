@@ -8,6 +8,82 @@ function pigLatin(word) {
   }
 }
 
+function getVowels(text) {
+  let vowelsCount = 0;
+  let word = text.toString();
+  for (let i = 0; i <= word.length -1; i++) {
+    if (word.charAt(i) === "a" || word.charAt(i) === "e" || word.charAt(i) === "i" || word.charAt(i) === "o" || word.charAt(i) === "u") {
+      vowelsCount += 1;
+    }
+  }
+  return vowelsCount
+} getVowels('Hello')
+
+// function startVowel(text) {
+//   let vowels = ["a", "e", "i", "o", "u"]
+//   let textArray = text.split (" ");
+//     let iCount=0
+//     let vowelArray=""
+//     textArray.forEach(function(i) {
+//       for (let j=0; j<=vowels.length; j++){
+//         if(i.startsWith(vowels[j])){
+//           if(i.startsWith(vowels[j])){
+//             icount++;
+//             vowelsArray.push(i.toLowerCase())
+//           }
+//         }
+//     }})
+//     return iCount
+// }
+
+// loop practice
+// function consonantFinder(passage) {
+//   const passageArray = ["a", "e", "i", "o", "u" , "b"]
+//   let consonantAlert = false;
+//   for (let i = 0; i < passageArray.length; i +=1) {
+//     if (passageArray[i] === 'b') {
+//       consonantAlert = true;
+//       break;
+//     } else {
+//       return
+//     }
+//     console.log('looped!');
+//     }
+
+//  Regex
+//function getVowels(text) {
+//  let vowelCount = text.match(/[aeiou]/gi);
+//  return vowelCount
+//}
+
+
+//   const countVowels = str => Array.from(str)
+//   .filter(letter => 'aeiou'.includes(letter)).length;
+
+// console.log(countVowels('abcdefghijklmnopqrstuvwxyz')); // 5
+// console.log(countVowels('test')); // 1
+// console.log(countVowels('ddd')); // 0
+
+//   const vowel = ['a' , 'e' , 'i' , 'o' , 'u'];
+//     if (vowel.includes(word[0])) {
+//       return true;
+//     }
+//     return false
+
+//loop practice
+// function consonantFinder(passage) {
+//   const passageArray = ["a", "e", "i", "o", "u" , "b"]
+//   let consonantAlert = false;
+//   for (let i = 0; i < passageArray.length; i +=1) {
+//     if (passageArray[i] === 'b') {
+//       consonantAlert = true;
+//       break;
+//     };
+//     console.log('looped!');
+//     }
+//     consonantAlert;
+//   }
+
 
 // User Interface Logic
 
@@ -18,9 +94,9 @@ $(document).ready(function() {
   const textInput = $('#textInput').val();
 
     if (pigLatin(textInput) === true) {
-    $('#translated').append(textInput).concat('way'); 
+    $('#translated').text(textInput.concat('way')); 
     }  else if (pigLatin(textInput) === false) {
-    $('#translated').text(textInput).concat('ay');
+    $('#translated').text(textInput.concat('ay'));
     }
     else {
       $('#translated').text('!')
@@ -29,12 +105,18 @@ $(document).ready(function() {
 })
 
 
-// Describe pigLatin();
 
-// Test: "It will add 'way' to the end of words that begin with a vowel."
-// Code: 
-//   pigLatin("a");
-// Expected Output: "away"
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Masha
